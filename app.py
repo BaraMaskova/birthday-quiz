@@ -9,7 +9,7 @@ st.title("🎉 Tajný narozeninový kvíz 🎉")
 questions = [
     ("Město odkud pocházíš?", "Brno", "B"),
     ("První písmeno abecedy?", "A", "A"),
-    ("Jaké zvíře vrní, ale není to kočka (je to divoký a na "r" :) ?", "Rys", "R"),
+    ("Jaké zvíře vrní, ale není to kočka (je to divoký a začíná na r :) ?", "Rys", "R"),
     ("Kávový nápoj s mlékem?", "Cappuccino", "C"),
     ("Firma vyrábějící iPhone?", "Apple", "A"),
 
@@ -64,7 +64,7 @@ if secret == "BARCAMANAROZENINY":
 
     st.write("Naskenuj QR kód ❤️")
 
-    GAME_URL = "https://birthday-quiz-oteawac7wnibqgzchysqlp.streamlit.app/"
+    GAME_URL = "https://birthday-heart-game-brhfapdpwkc9hx8vjkdtth.streamlit.app/"
 
     qr = qrcode.make(GAME_URL)
 
