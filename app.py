@@ -7,11 +7,26 @@ st.set_page_config(page_title="Birthday Quiz 🎉")
 st.title("🎉 Tajný narozeninový kvíz 🎉")
 
 questions = [
-    ("Hlavní město Německa?", "Berlín", "B"),
+    ("Město odkud pocházíš?", "Brno", "B"),
     ("První písmeno abecedy?", "A", "A"),
-    ("Jaké zvíře vrní?", "Rys", "R"),
-    ("Nápoj z kávy?", "Cappuccino", "C"),
-    ("Značka iPhonu?", "Apple", "A"),
+    ("Jaké zvíře vrní, ale není to kočka (je to divoký a na "r" :) ?", "Rys", "R"),
+    ("Kávový nápoj s mlékem?", "Cappuccino", "C"),
+    ("Firma vyrábějící iPhone?", "Apple", "A"),
+
+    ("České město Brno je na?", "Moravě", "M"),
+    ("Opak slova ne?", "Ano", "A"),
+    ("Opak slova ano?", "Ne", "N"),
+    ("První písmeno slova auto?", "A", "A"),
+    ("Pořad .... pro nevěstu?", "Růže", "R"),
+
+    ("Kulaté písmeno abecedy?", "O", "O"),
+    ("Zvíře se zebrovanými pruhy?", "Zebra", "Z"),
+    ("Elektronická pošta anglicky?", "Email", "E"),
+    ("Opak dne?", "Noc", "N"),
+    ("Telefon od Applu?", "iPhone", "I"),
+
+    ("Den po pondělí?", "Neděle", "N"),
+    ("Anglicky „proč“", "Why", "Y")
 ]
 
 secret = ""
@@ -24,7 +39,7 @@ for i, (question, answer, letter) in enumerate(questions):
 
     if user_answer:
 
-        if user_answer.lower() == answer.lower():
+        if user_answer.lower().strip() == answer.lower().strip():
             st.success(f"✅ Správně! Písmeno: {letter}")
             secret += letter
         else:
@@ -41,15 +56,15 @@ st.subheader(f"Tajenka: {display_secret}")
 
 FULL_SECRET = "BARCA_MA_NAROZENINY"
 
-if secret == "BARCA":
+if secret == "BARCAMANAROZENINY":
 
     st.balloons()
 
-    st.success("🎉 Tajenka odhalena! 🎉")
+    st.success("🎉 Tajenka vyluštěna! 🎉")
 
     st.write("Naskenuj QR kód ❤️")
 
-    GAME_URL = "https://SEM_DAS_SVOJI_STREAMLIT_URL"
+    GAME_URL = "https://birthday-quiz-oteawac7wnibqgzchysqlp.streamlit.app/"
 
     qr = qrcode.make(GAME_URL)
 
